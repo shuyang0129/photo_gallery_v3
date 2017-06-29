@@ -6,6 +6,12 @@
 Base Element
 ====================================*/
 
+body,
+input {
+	font-family: 'Josefin Sans', sans-serif;
+	/*font-family: 'Advent Pro', sans-serif;*/
+}
+
 /*====================================
 Container
 ====================================*/
@@ -20,6 +26,26 @@ Container
 Search Bar Style
 ====================================*/
 
+#search {
+	/**** size & spacing ****/
+	padding: 16px;
+	width: 100%;
+	margin-bottom: 32px;
+	/**** style ****/
+	border-style: none;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
 /*====================================
 Typography
 ====================================*/
+
+#search {
+	font-weight: 300;
+	letter-spacing: 1.2px;
+}
+
+#search {
+	font-size: 16px;
+}
