@@ -14,18 +14,30 @@
 	<body>
 		
 		<header>
-			<div class="container">
+			<div class="container search-bar">
 				<input type="text" name="search" id="search" placeholder="Search">
 			</div>
 		</header>
 
 		<main>
-			<div class="container"></div>
-			<!-- photo galley -->
+			<div class="container">
+				<div class="cell">
+				  <img src="photos/thumbnails/01.jpg" alt="Hay Bales" class="thumbnail">
+				  <div class="overlay">
+				  	<div class="text">
+					  	<h2 class="title">Hay Bales</h2>
+					    <p class="description">I love hay bales. Took this snap on a drive through the countryside past some straw fields.</p>
+					</div>
+				  </div>
+				</div>
+			</div>
 		</main>
 		
 
 		<!-- JS & jQuery -->
+		<script src="js/muuri-master/velocity.min.js"></script>
+		<script src="js/muuri-master/hammer.min.js"></script>
+		<script src="js/muuri-master/muuri.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

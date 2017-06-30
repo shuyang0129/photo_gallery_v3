@@ -12,6 +12,11 @@ input {
 	/*font-family: 'Advent Pro', sans-serif;*/
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 /*====================================
 Container
 ====================================*/
@@ -20,6 +25,41 @@ Container
 	max-width: 1280px;
 	width: 100%;
 	padding: 16px 16px 0;
+	margin: 0 auto;
+}
+
+.search-bar {
+	text-align: center;
+}
+
+
+
+/*====================================
+Typography
+====================================*/
+
+#search,
+.description {
+	font-weight: 300;
+	font-size: 1rem;
+}
+
+.description {
+	line-height: 1.2;
+}
+
+.title {
+	font-size: 1.3rem;
+	font-weight: 400;
+}
+
+/*====================================
+Color
+====================================*/
+
+.title,
+.description {
+	color: white;
 }
 
 /*====================================
@@ -29,8 +69,9 @@ Search Bar Style
 #search {
 	/**** size & spacing ****/
 	padding: 16px;
+	max-width: 632px;
 	width: 100%;
-	margin-bottom: 32px;
+	margin: 0 auto 16px;
 	/**** style ****/
 	border-style: none;
 	border-radius: 2px;
@@ -38,14 +79,56 @@ Search Bar Style
 }
 
 /*====================================
-Typography
+Image overlay hover effect
 ====================================*/
 
-#search {
-	font-weight: 300;
-	letter-spacing: 1.2px;
+.title {
+	margin-top: 0;
+	margin-bottom: 16px;
 }
 
-#search {
-	font-size: 16px;
+.cell {
+	position: relative;
+	width: 100%;
+	max-width: 200px;
 }
+
+.thumbnail {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/**** Overlay style ****/
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+
+	height: 100%;
+	width: 100%;
+
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #000;
+}
+
+.cell:hover .overlay {
+  opacity: 1;
+}
+
+/*====================================
+Grid Layout
+====================================*/
+
+
+
+/*====================================
+Media Querry
+====================================*/
+
+
