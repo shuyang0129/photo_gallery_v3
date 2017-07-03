@@ -1,6 +1,9 @@
+
 * {
 	box-sizing: border-box;
 }
+
+
 
 /*====================================
 Base Element
@@ -9,13 +12,13 @@ Base Element
 body,
 input {
 	font-family: 'Josefin Sans', sans-serif;
-	/*font-family: 'Advent Pro', sans-serif;*/
 }
 
 img {
 	width: 100%;
-	height: auto;
 }
+
+
 
 /*====================================
 Container
@@ -26,10 +29,6 @@ Container
 	width: 100%;
 	padding: 16px 16px 0;
 	margin: 0 auto;
-}
-
-.search-bar {
-	text-align: center;
 }
 
 
@@ -45,7 +44,7 @@ Typography
 }
 
 .description {
-	line-height: 1.2;
+	line-height: 1.25;
 }
 
 .title {
@@ -61,6 +60,8 @@ Color
 .description {
 	color: white;
 }
+
+
 
 /*====================================
 Search Bar Style
@@ -78,18 +79,23 @@ Search Bar Style
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
+
+
 /*====================================
 Grid Layout
 ====================================*/
 
 .item {
-	display: block;
 	position: relative;
+
+	display: block;
+	float: left;
+	width: calc( 50% - 8px);
+
 	line-height: 0;
 	margin-bottom: 16px;
 	margin-right: 16px;
-	float: left;
-	width: calc( 50% - 8px);
+	
 	cursor: pointer;
 }
 
@@ -97,16 +103,11 @@ Grid Layout
 	margin-right: 0;
 }
 
+
+
 /*====================================
 Image overlay hover effect
 ====================================*/
-
-.title {
-	margin-top: 16px;
-	margin-bottom: 30px;
-}
-
-/**** Overlay style ****/
 
 .overlay {
 	position: absolute;
@@ -114,7 +115,7 @@ Image overlay hover effect
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 20px;
+	padding: 16px;
 
 	height: 100%;
 	width: 100%;
@@ -128,9 +129,15 @@ Image overlay hover effect
 	opacity: 1;
 }
 
+
+
 /*====================================
 Media Querry
 ====================================*/
+
+@media only screen and (max-width: 632px) {
+
+}
 
 @media only screen and (min-width: 632px) {
     .item {
