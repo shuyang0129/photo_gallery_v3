@@ -8,8 +8,6 @@ jQuery(document).ready(function($){
 
     $("#search").on("keyup", function(){
 
-    	var count = 0;
-
         if (search != $("#search").val()) {
         	search = $("#search").val();
         	console.log(search);
@@ -23,8 +21,6 @@ jQuery(document).ready(function($){
         			if ( $(".item").eq(i).css("display") === "none" ) {
         				$(".item").eq(i).removeClass("hide").fadeIn("slow");
         			}
-
-        			count ++;
 
         		} else {
 					
