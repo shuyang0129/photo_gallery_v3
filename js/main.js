@@ -10,7 +10,6 @@ jQuery(document).ready(function($){
 
         if (search != $("#search").val()) {
         	search = $("#search").val();
-        	console.log(search);
 
         	for (var i = 0; i < itemNum; i++) {
         		title = $(".item").eq(i).find(".title").text();
