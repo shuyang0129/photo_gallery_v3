@@ -18,7 +18,9 @@ img {
 	width: 100%;
 }
 
-
+.hide {
+	display: none;
+}
 
 /*====================================
 Container
@@ -39,7 +41,7 @@ Typography
 
 #search,
 .description {
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1rem;
 }
 
@@ -49,7 +51,7 @@ Typography
 
 .title {
 	font-size: 1.3rem;
-	font-weight: 400;
+	font-weight: 600;
 }
 
 /*====================================
@@ -134,10 +136,6 @@ Image overlay hover effect
 /*====================================
 Media Querry
 ====================================*/
-
-@media only screen and (max-width: 632px) {
-
-}
 
 @media only screen and (min-width: 632px) {
     .item {
