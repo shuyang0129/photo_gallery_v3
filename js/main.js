@@ -1,52 +1,38 @@
 
 $.noConflict();
+
 jQuery(document).ready(function($){
 
-	var itemNum = $(".item").length;
-	var search = [];
-	var title = "";
-	var description = "";
+    var search = [];
 
-    $("#search").on("keyup", function(){
+    function creatPhoto(i) {
 
-        if (search != $("#search").val().split(" ")) {
-        	search = $("#search").val().split(" ");
-
-        	for (var i = 0; i < itemNum; i++) {
-
-                var filter = false;
-
-        		title = $(".item").eq(i).find(".title").text();
-        		description = $(".item").eq(i).find(".description").text();
-
-                for(x in search) {
-
-                    if ( (title.search(search[x]) > -1 || description.search(search[x]) > -1) && search[x] != "" ) {
-                        filter = true;
-                    }
-
-                }
-        		
-        		if (filter) {
-        			
-        			if ( $(".item").eq(i).css("display") === "none" ) {
-        				$(".item").eq(i).removeClass("hide").fadeIn("slow");
-        			}
-
-
-        		} else {
-					
-        			$(".item").eq(i).addClass("hide").fadeOut("slow");
-
-        		}
-        	}
+        if (!photos[i].hide) {
+            var html = '<div class="item">';
+            html += '<a href="photos/' + (i + 1) + '.jpg"';
+            html += ' data-lightbox="image-group"'
+            html += ' data-title="' + photos[i].title + ' - ' + photos[i].description + '"">';
+            html += '<img src="photos/thumbnails/' + (i + 1) + '.jpg">';
+            html += '<div class="overlay">';
+            html += '<h2 class="title">' + photos[i].title + '</h2>';
+            html += '<p class="description">' + photos[i].description;
+            html += '</p></div></a></div>'
+            return html;
         }
 
-        if ($(".item:not('.hide')").length <= 0) {
-        		$("#no-result").removeClass("hide");
-        	} else {
-        		$("#no-result").addClass("hide");
-        	}
+    }//creatPhoto func
 
-    });
+    function createGallery(fileName, placeholder) {
+
+        $(placeholder).empty();
+
+        for (var i = 0; i < fileName.length; i++) {
+            $(placeholder).append(creatPhoto(i));
+        }
+
+    }//createGallery func
+
+    createGallery(photos, ".grid");
+
+    
 });
