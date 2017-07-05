@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
 
     $("#search").on("keyup", function(){
         
-        var userInput = $("#search").val().split(" ");
+        var userInput = $("#search").val().toLowerCase().split(" ");
 
         if (search != userInput) { // Don't do anything if the input did not change
             
@@ -60,6 +60,7 @@ jQuery(document).ready(function($){
 
                     var check = false; //check if anything match user input
                     var content = photos[i].title + " " + photos[i].description;
+                    content = content.toLowerCase();
 
                     for(var x in search) {
 
