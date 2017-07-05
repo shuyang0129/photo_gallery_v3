@@ -10,13 +10,13 @@ jQuery(document).ready(function($){
         if (!photos[i].hide) {
             var html = '<div class="item">';
             html += '<a href="photos/' + (i + 1) + '.jpg"';
-            html += ' data-lightbox="image-group"'
+            html += ' data-lightbox="image-group"';
             html += ' data-title="' + photos[i].title + ' - ' + photos[i].description + '"">';
             html += '<img src="photos/thumbnails/' + (i + 1) + '.jpg">';
             html += '<div class="overlay">';
             html += '<h2 class="title">' + photos[i].title + '</h2>';
             html += '<p class="description">' + photos[i].description;
-            html += '</p></div></a></div>'
+            html += '</p></div></a></div>';
             return html;
         }
 
@@ -44,9 +44,11 @@ jQuery(document).ready(function($){
 
             if (search == "") { // If search input is empty, show entire gallery
 
-                for (i in photos) {
+                for (var j in photos) {
 
-                    photos[i].hide = false;
+                    if (photos[j].hide) {
+	                    photos[j].hide = false;
+	                }
 
                 }
 
@@ -54,12 +56,12 @@ jQuery(document).ready(function($){
 
             } else {
                 
-                for (i in photos) {
+                for (var i in photos) {
 
                     var check = false; //check if anything match user input
                     var content = photos[i].title + " " + photos[i].description;
 
-                    for(x in search) {
+                    for(var x in search) {
 
                         if ( content.search(search[x]) > -1 && search[x] != "" ) {
                             check = true;
