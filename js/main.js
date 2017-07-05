@@ -34,5 +34,66 @@ jQuery(document).ready(function($){
 
     createGallery(photos, ".grid");
 
-    
+    $("#search").on("keyup", function(){
+        
+        var userInput = $("#search").val().split(" ");
+
+        if (search != userInput) { // Don't do anything if the input did not change
+            
+            search = userInput;
+
+            if (search == "") { // If search input is empty, show entire gallery
+
+                for (i in photos) {
+
+                    photos[i].hide = false;
+
+                }
+
+                createGallery(photos, ".grid");
+
+            } else {
+                
+                for (i in photos) {
+
+                    var check = false; //check if anything match user input
+                    var content = photos[i].title + " " + photos[i].description;
+
+                    for(x in search) {
+
+                        if ( content.search(search[x]) > -1 && search[x] != "" ) {
+                            check = true;
+                        }
+
+                    }
+                    
+                    if (check === true && photos[i].hide === true) {
+
+                        photos[i].hide = false;
+
+                    } else if( check === false && photos[i].hide === false ) {
+                        
+                        photos[i].hide = true;
+
+                    }
+
+                }
+
+                createGallery(photos, ".grid");
+
+            }
+        }
+
+        // Show/Hide the text when no result found
+        if ($(".item:not('.hide')").length <= 0) {
+                
+                $("#no-result").removeClass("hide");
+
+            } else {
+                
+                $("#no-result").addClass("hide");
+                
+            }
+
+    });
 });
